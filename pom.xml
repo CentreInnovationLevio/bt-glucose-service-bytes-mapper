@@ -50,12 +50,12 @@
     </plugins>
   </build>
 
-  <repositories>
-    <repository>
+  <pluginRepositories>
+    <pluginRepository>
       <id>plugins-release</id>
       <name>spring plugins release</name>
       <url>http://repo.spring.io/plugins-release</url>
-    </repository>
-  </repositories>
+    </pluginRepository>
+  </pluginRepositories>
 
 </project>
