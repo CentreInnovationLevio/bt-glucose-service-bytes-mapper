@@ -1,0 +1,25 @@
+sudo: required
+jobs:
+  include:
+    - stage: deploy-prod
+      language: java
+      before_install: cd $TRAVIS_BUILD_DIR
+      install: true
+      script:
+        - "./mvnw deploy -Djfrog-url=$JFROG_URL" -Djfrog-username=$JFROG_USER -Djfrog-password=$JFROG_PASSWORD"
+    - stage: deploy-dev
+      language: java
+      before_install: cd $TRAVIS_BUILD_DIR
+      install: true
+      script:
+        - "./mvnw deploy -Djfrog-url=$JFROG_URL" -Djfrog-username=$JFROG_USER -Djfrog-password=$JFROG_PASSWORD"
+stages:
+  - name: deploy-prod
+    if: "(branch = master) AND (type IN (push))"
+  - name: deploy-dev
+    if: "(branch = develop) AND (type IN (push))"
+cache:
+  directories:
+    - "$HOME/.m2"
+notifications:
+  slack: leviocil:Ih4v9V2w0g6s54vpsfGm0dwn
