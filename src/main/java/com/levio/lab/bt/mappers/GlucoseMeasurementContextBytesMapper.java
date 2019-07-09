@@ -185,10 +185,10 @@ class GlucoseMeasurementContextBytesMapper {
           glucoseMeasurementContext.setMeal("Reserved for future use");
           break;
         case 1:
-          glucoseMeasurementContext.setMeal("Preprendial (before meal)");
+          glucoseMeasurementContext.setMeal("Preprandial (before meal)");
           break;
         case 2:
-          glucoseMeasurementContext.setMeal("Postprendial (after meal)");
+          glucoseMeasurementContext.setMeal("Postprandial (after meal)");
           break;
         case 3:
           glucoseMeasurementContext.setMeal("Fasting");
